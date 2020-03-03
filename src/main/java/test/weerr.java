@@ -3,6 +3,7 @@ package test;
 import pojo.*;
 import dao.createDelaunayTriangleMap;
 
+import java.rmi.Remote;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,25 +17,13 @@ import java.util.List;
 public class weerr {
     public static void main(String[] args) {
 
-        List<Point> points = new ArrayList<>();
-        points.add(new Point(0, -1,0));
-        points.add(new Point(0, 0,1));
-        points.add(new Point(0, 1,0));
-        points.add(new Point(0, 0,0));
-        points.add(new Point(0, 0,2));
-        points.add(new Point(0, -1,-1));
-        points.add(new Point(0, 2,2));
+        List<Integer> aa = new ArrayList<>();
+        aa.add(new Integer(1));
+        aa.add(new Integer(2));
+        aa.add(new Integer(3));
+        aa.add(new Integer(1));
 
-        List<Edge> edges = new ArrayList<>();
-        edges.add(new Edge(points.get(0),points.get(1)));
-        edges.add(new Edge(points.get(1),points.get(0)));
-        for(Edge edge : edges){
-            System.out.println(edge);
-        }
-        System.out.println();
-        createDelaunayTriangleMap.bufferQuChong(edges);
-        for(Edge edge:edges){
-            System.out.println(edge);
-        }
+        System.out.println(aa);
+
     }
 }

@@ -25,6 +25,9 @@ public class tttt {
 
         //对散列表进行排序，经度为主序，纬度为从序
         Point.Sort(points);
+        for(Point point:points){
+            point.setId(points.indexOf(point)+1);
+        }
 
         //构建超级三角形
         DelaunayTriangle superTriangle=createDelaunayTriangleMap.createSuperTriangle(points);
@@ -36,6 +39,10 @@ public class tttt {
 
         tempTriangles.add(superTriangle);//将超级三角形放入temp中
 
+        createDelaunayTriangleMap.createDelanuaryTriangleMap(points,tempTriangles,triangles,buffer,superTriangle);
+        for(DelaunayTriangle triangle : triangles){
+            System.out.println(triangle);
+        }
 
     }
 }

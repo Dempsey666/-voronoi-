@@ -4,7 +4,15 @@
     <option name="GROUP_BY_SEVERITY" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="272cf9e7-7cc2-4e1a-926b-fdd1224246e2" name="默认更改列表" comment="" />
+    <list default="true" id="272cf9e7-7cc2-4e1a-926b-fdd1224246e2" name="默认更改列表" comment="test">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/createDelaunayTriangleMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/createDelaunayTriangleMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/tttt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/tttt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/weerr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/weerr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/createDelaunayTriangleMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/createDelaunayTriangleMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/tttt.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/tttt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/weerr.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/weerr.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +27,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="IgnoredFileRootStore">
     <option name="generatedRoots">
@@ -77,7 +86,7 @@
       <recent name="C:\Users\AIM\IdeaProjects\conp\src\main\java" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.weerr">
+  <component name="RunManager" selected="Application.tttt">
     <configuration name="tttt" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="test.tttt" />
       <module name="conp" />
@@ -100,8 +109,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.weerr" />
         <item itemvalue="Application.tttt" />
+        <item itemvalue="Application.weerr" />
       </list>
     </recent_temporary>
   </component>
@@ -131,7 +140,7 @@
       <workItem from="1583055130802" duration="4741000" />
       <workItem from="1583067704076" duration="8042000" />
       <workItem from="1583125890545" duration="24743000" />
-      <workItem from="1583213109758" duration="20216000" />
+      <workItem from="1583213109758" duration="31651000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1583244392828</created>
@@ -147,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583246006581</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="test">
+      <created>1583246037769</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1583246037769</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,33 +186,33 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#项目结构/0.0.1920.1040/-1080.-371.1080.1880@0.0.1920.1040" timestamp="1583054373973" />
-    <state x="-925" y="161" key="CommitChangelistDialog2" timestamp="1583246005640">
+    <state x="-925" y="161" key="CommitChangelistDialog2" timestamp="1583246183967">
       <screen x="-1080" y="-371" width="1080" height="1880" />
     </state>
-    <state x="-925" y="161" key="CommitChangelistDialog2/0.0.1920.1040/-1080.-371.1080.1880@-1080.-371.1080.1880" timestamp="1583246005640" />
-    <state x="-760" y="324" key="FileChooserDialogImpl" timestamp="1583244232115">
+    <state x="-925" y="161" key="CommitChangelistDialog2/0.0.1920.1040/-1080.-371.1080.1880@-1080.-371.1080.1880" timestamp="1583246183967" />
+    <state x="-760" y="324" key="FileChooserDialogImpl" timestamp="1583246121809">
       <screen x="-1080" y="-371" width="1080" height="1880" />
     </state>
-    <state x="-760" y="324" key="FileChooserDialogImpl/0.0.1920.1040/-1080.-371.1080.1880@-1080.-371.1080.1880" timestamp="1583244232115" />
-    <state width="1037" height="510" key="GridCell.Tab.0.bottom" timestamp="1583241308121">
+    <state x="-760" y="324" key="FileChooserDialogImpl/0.0.1920.1040/-1080.-371.1080.1880@-1080.-371.1080.1880" timestamp="1583246121809" />
+    <state width="1037" height="510" key="GridCell.Tab.0.bottom" timestamp="1583257752614">
       <screen x="-1080" y="-371" width="1080" height="1880" />
     </state>
-    <state width="1037" height="510" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1080.-371.1080.1880@-1080.-371.1080.1880" timestamp="1583241308121" />
+    <state width="1037" height="510" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1080.-371.1080.1880@-1080.-371.1080.1880" timestamp="1583257752614" />
     <state width="1877" height="218" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1080.-371.1080.1880@0.0.1920.1040" timestamp="1583054526747" />
-    <state width="1037" height="510" key="GridCell.Tab.0.center" timestamp="1583241308120">
+    <state width="1037" height="510" key="GridCell.Tab.0.center" timestamp="1583257752614">
       <screen x="-1080" y="-371" width="1080" height="1880" />
     </state>
-    <state width="1037" height="510" key="GridCell.Tab.0.center/0.0.1920.1040/-1080.-371.1080.1880@-1080.-371.1080.1880" timestamp="1583241308120" />
+    <state width="1037" height="510" key="GridCell.Tab.0.center/0.0.1920.1040/-1080.-371.1080.1880@-1080.-371.1080.1880" timestamp="1583257752614" />
     <state width="1877" height="218" key="GridCell.Tab.0.center/0.0.1920.1040/-1080.-371.1080.1880@0.0.1920.1040" timestamp="1583054526747" />
-    <state width="1037" height="510" key="GridCell.Tab.0.left" timestamp="1583241308120">
+    <state width="1037" height="510" key="GridCell.Tab.0.left" timestamp="1583257752614">
       <screen x="-1080" y="-371" width="1080" height="1880" />
     </state>
-    <state width="1037" height="510" key="GridCell.Tab.0.left/0.0.1920.1040/-1080.-371.1080.1880@-1080.-371.1080.1880" timestamp="1583241308120" />
+    <state width="1037" height="510" key="GridCell.Tab.0.left/0.0.1920.1040/-1080.-371.1080.1880@-1080.-371.1080.1880" timestamp="1583257752614" />
     <state width="1877" height="218" key="GridCell.Tab.0.left/0.0.1920.1040/-1080.-371.1080.1880@0.0.1920.1040" timestamp="1583054526747" />
-    <state width="1037" height="510" key="GridCell.Tab.0.right" timestamp="1583241308121">
+    <state width="1037" height="510" key="GridCell.Tab.0.right" timestamp="1583257752614">
       <screen x="-1080" y="-371" width="1080" height="1880" />
     </state>
-    <state width="1037" height="510" key="GridCell.Tab.0.right/0.0.1920.1040/-1080.-371.1080.1880@-1080.-371.1080.1880" timestamp="1583241308121" />
+    <state width="1037" height="510" key="GridCell.Tab.0.right/0.0.1920.1040/-1080.-371.1080.1880@-1080.-371.1080.1880" timestamp="1583257752614" />
     <state width="1877" height="218" key="GridCell.Tab.0.right/0.0.1920.1040/-1080.-371.1080.1880@0.0.1920.1040" timestamp="1583054526747" />
     <state x="-1010" y="224" key="Maven.ArtifactSearchDialog" timestamp="1583140183958">
       <screen x="-1080" y="-371" width="1080" height="1880" />
@@ -206,10 +222,14 @@
       <screen x="-1080" y="-371" width="1080" height="1880" />
     </state>
     <state x="-1039" y="211" key="SettingsEditor/0.0.1920.1040/-1080.-371.1080.1880@-1080.-371.1080.1880" timestamp="1583055112101" />
-    <state x="-948" y="290" key="Vcs.Push.Dialog.v2" timestamp="1583244445776">
+    <state x="-948" y="290" key="Vcs.Push.Dialog.v2" timestamp="1583246058713">
       <screen x="-1080" y="-371" width="1080" height="1880" />
     </state>
-    <state x="-948" y="290" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-371.1080.1880@-1080.-371.1080.1880" timestamp="1583244445776" />
+    <state x="-948" y="290" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-371.1080.1880@-1080.-371.1080.1880" timestamp="1583246058713" />
+    <state x="-748" y="486" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583246196937">
+      <screen x="-1080" y="-371" width="1080" height="1880" />
+    </state>
+    <state x="-748" y="486" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/-1080.-371.1080.1880@-1080.-371.1080.1880" timestamp="1583246196937" />
     <state x="-1080" y="264" key="new project wizard" timestamp="1583057012287">
       <screen x="-1080" y="-371" width="1080" height="1880" />
     </state>
