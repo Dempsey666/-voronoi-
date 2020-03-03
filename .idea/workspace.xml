@@ -4,11 +4,7 @@
     <option name="GROUP_BY_SEVERITY" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="272cf9e7-7cc2-4e1a-926b-fdd1224246e2" name="默认更改列表" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/createDelaunayTriangleMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/createDelaunayTriangleMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/tttt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/tttt.java" afterDir="false" />
-    </list>
+    <list default="true" id="272cf9e7-7cc2-4e1a-926b-fdd1224246e2" name="默认更改列表" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -135,7 +131,7 @@
       <workItem from="1583055130802" duration="4741000" />
       <workItem from="1583067704076" duration="8042000" />
       <workItem from="1583125890545" duration="24743000" />
-      <workItem from="1583213109758" duration="19961000" />
+      <workItem from="1583213109758" duration="20216000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1583244392828</created>
@@ -144,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583244392828</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="test">
+      <created>1583246006581</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1583246006581</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,10 +170,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#项目结构/0.0.1920.1040/-1080.-371.1080.1880@0.0.1920.1040" timestamp="1583054373973" />
-    <state x="-925" y="161" key="CommitChangelistDialog2" timestamp="1583244391738">
+    <state x="-925" y="161" key="CommitChangelistDialog2" timestamp="1583246005640">
       <screen x="-1080" y="-371" width="1080" height="1880" />
     </state>
-    <state x="-925" y="161" key="CommitChangelistDialog2/0.0.1920.1040/-1080.-371.1080.1880@-1080.-371.1080.1880" timestamp="1583244391738" />
+    <state x="-925" y="161" key="CommitChangelistDialog2/0.0.1920.1040/-1080.-371.1080.1880@-1080.-371.1080.1880" timestamp="1583246005640" />
     <state x="-760" y="324" key="FileChooserDialogImpl" timestamp="1583244232115">
       <screen x="-1080" y="-371" width="1080" height="1880" />
     </state>
