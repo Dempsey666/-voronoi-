@@ -98,7 +98,8 @@ public class createDelaunayTriangleMap {
 
     }
 
-    //判断
+
+    /*---------------------------我是快乐的分割线----------------------*/
 
     //通过一条边和一个点建立一个三角形
     public static DelaunayTriangle createTriangleWithEdgePoint(Edge edge,Point point){
