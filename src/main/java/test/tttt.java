@@ -17,32 +17,14 @@ import dao.createDelaunayTriangleMap;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class tttt {
     public static void main(String[] args) throws IOException {
         //从数据库里得到基站散列表
         List<Point> points = getPoints.getP();
 
-        //对散列表进行排序，经度为主序，纬度为从序
-        Point.Sort(points);
-        for(Point point:points){
-            point.setId(points.indexOf(point)+1);
-        }
-
-        //构建超级三角形
-        DelaunayTriangle superTriangle=createDelaunayTriangleMap.createSuperTriangle(points);
-
-        //构建Delaunary三角网
-        List<DelaunayTriangle> tempTriangles = new ArrayList<>();//未确定的三角形列表
-        List<DelaunayTriangle> triangles =new ArrayList<>();//确定的三角形列表
-        List<Edge> buffer= new ArrayList<>();//未使用完的边
-
-        tempTriangles.add(superTriangle);//将超级三角形放入temp中
-
-        createDelaunayTriangleMap.createDelanuaryTriangleMap(points,tempTriangles,triangles,buffer,superTriangle);
-        for(DelaunayTriangle triangle : triangles){
-            System.out.println(triangle);
-        }
+        List<DelaunayTriangle> triangles = createDelaunayTriangleMap.createDelanuaryTriangleMap(points);
 
     }
 }

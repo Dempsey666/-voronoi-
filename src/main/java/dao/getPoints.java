@@ -30,12 +30,25 @@ public class getPoints{
         session.commit();
         session.close();
         List<Point> points = new ArrayList<>();
-        int id=0;
+
+
         for (Site s : sites) {
-            id+=1;
-            Point p = new Point(id,s);
+            Point p = new Point(0,s);
             points.add(p);
         }
+
+        //对散列表进行排序，经度为主序，纬度为从序,重写id
+        Point.Sort(points);
+        for(int i=points.size()-1;i>=1;i--){
+            if(points.get(i).equals(points.get(i-1))){
+                points.remove(i);
+            }
+        }
+        for(Point point:points){
+            point.setId(points.indexOf(point)+1);
+            System.out.println(point);
+        }
+
         return points;
     }
 

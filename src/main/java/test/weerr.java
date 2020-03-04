@@ -17,13 +17,12 @@ import java.util.List;
 public class weerr {
     public static void main(String[] args) {
 
-        List<Integer> aa = new ArrayList<>();
-        aa.add(new Integer(1));
-        aa.add(new Integer(2));
-        aa.add(new Integer(3));
-        aa.add(new Integer(1));
+        Site s1 = new Site(1,2);
+        Site s2 = new Site(1,2);
+        Site s3 = new Site(2,2);
 
-        System.out.println(aa);
+        System.out.println(s1.equals(s2));
+        System.out.println(s1==s2);
 
     }
 }
