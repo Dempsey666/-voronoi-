@@ -16,13 +16,7 @@ import java.util.List;
  */
 public class weerr {
     public static void main(String[] args) {
-
-        Site s1 = new Site(1,2);
-        Site s2 = new Site(1,2);
-        Site s3 = new Site(2,2);
-
-        System.out.println(s1.equals(s2));
-        System.out.println(s1==s2);
+        double x =100000;
 
     }
 }

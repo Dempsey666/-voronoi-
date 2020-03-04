@@ -73,7 +73,11 @@ public class createDelaunayTriangleMap{
         triangles.addAll(temp);
         //去除所有与超级三角形三点有关的三角形
         deleteTriangleWithSuperTriangle(triangles, superTriangle);
-        System.out.println(triangles.size());
+
+        //要开始凸边修饰了
+
+
+
         return triangles;
     }
 
