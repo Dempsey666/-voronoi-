@@ -4,14 +4,7 @@
     <option name="GROUP_BY_SEVERITY" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="272cf9e7-7cc2-4e1a-926b-fdd1224246e2" name="默认更改列表" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/duoxianchen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/createDelaunayTriangleMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/createDelaunayTriangleMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/createDelaunayTriangleMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/createDelaunayTriangleMap.class" afterDir="false" />
-    </list>
+    <list default="true" id="272cf9e7-7cc2-4e1a-926b-fdd1224246e2" name="默认更改列表" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -154,7 +147,7 @@
       <workItem from="1583067704076" duration="8042000" />
       <workItem from="1583125890545" duration="24743000" />
       <workItem from="1583213109758" duration="34880000" />
-      <workItem from="1583280397853" duration="7456000" />
+      <workItem from="1583280397853" duration="7713000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1583244392828</created>
@@ -184,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583257767499</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="test">
+      <created>1583290201442</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1583290201442</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,10 +207,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#项目结构/0.0.1920.1040/-1080.-371.1080.1880@0.0.1920.1040" timestamp="1583054373973" />
-    <state x="-925" y="161" key="CommitChangelistDialog2" timestamp="1583257766440">
+    <state x="-925" y="161" key="CommitChangelistDialog2" timestamp="1583290237780">
       <screen x="-1080" y="-371" width="1080" height="1880" />
     </state>
-    <state x="-925" y="161" key="CommitChangelistDialog2/0.0.1920.1040/-1080.-371.1080.1880@-1080.-371.1080.1880" timestamp="1583257766440" />
+    <state x="-925" y="161" key="CommitChangelistDialog2/0.0.1920.1040/-1080.-371.1080.1880@-1080.-371.1080.1880" timestamp="1583290237780" />
     <state x="-760" y="324" key="FileChooserDialogImpl" timestamp="1583246121809">
       <screen x="-1080" y="-371" width="1080" height="1880" />
     </state>
@@ -243,10 +243,10 @@
       <screen x="-1080" y="-371" width="1080" height="1880" />
     </state>
     <state x="-1039" y="211" key="SettingsEditor/0.0.1920.1040/-1080.-371.1080.1880@-1080.-371.1080.1880" timestamp="1583055112101" />
-    <state x="-948" y="290" key="Vcs.Push.Dialog.v2" timestamp="1583257769424">
+    <state x="-948" y="290" key="Vcs.Push.Dialog.v2" timestamp="1583290206189">
       <screen x="-1080" y="-371" width="1080" height="1880" />
     </state>
-    <state x="-948" y="290" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-371.1080.1880@-1080.-371.1080.1880" timestamp="1583257769424" />
+    <state x="-948" y="290" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-371.1080.1880@-1080.-371.1080.1880" timestamp="1583290206189" />
     <state x="-748" y="486" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583246196937">
       <screen x="-1080" y="-371" width="1080" height="1880" />
     </state>

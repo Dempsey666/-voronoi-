@@ -172,8 +172,6 @@ public class createDelaunayTriangleMap extends Thread{
     }
 
     //通过一条边和一个点建立一个三角形(三点做三角形在pojo.DelaunayTreiangle里面)
-    //要改多线程
-
 
     public static DelaunayTriangle createTriangleWithEdgePoint(Edge edge, Point point) {
         DelaunayTriangle delaunayTriangle = new DelaunayTriangle(edge.getA(), edge.getB(), point);
