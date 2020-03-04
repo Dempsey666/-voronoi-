@@ -14,7 +14,7 @@ import java.util.Set;
  * Date:  2020/3/2 19:28
  * Modified By:
  */
-public class createDelaunayTriangleMap {
+public class createDelaunayTriangleMap extends Thread{
 
     //做超级三角形（注：每个点都有自己独特的id（从1开始），而超级三角形三个点的id均为0）
     public static DelaunayTriangle createSuperTriangle(List<Point> points) {
@@ -89,14 +89,18 @@ public class createDelaunayTriangleMap {
                 if (WHEREISPOINT == 1) {
                     //跳过，写一下思路清楚一点，其实不用写
                 }
+
             }
             //顺序遍历所有buffer中的边,进行去重（重叠的两条边都删）
+            System.out.print(buffer.size()+"  ");
             bufferQuChong(buffer);
             System.out.print(buffer.size()+"  ");
+
             //顺序遍历所有buffer中的边，将现有点与所有边一一组合为新的三角形存入temp中
             for (Edge edge : buffer) {
                 temp.add(createTriangleWithEdgePoint(edge, point));
             }
+
             System.out.println(temp.size());
         }
         //所有点遍历完之后，合并所有确定未确定的三角形列表
@@ -105,6 +109,49 @@ public class createDelaunayTriangleMap {
         deleteTriangleWithSuperTriangle(triangles, superTriangle);
     }
 
+    //创建三角网2
+    public static void createDelanuaryTriangleMap2(List<Point> points, List<DelaunayTriangle> temp, List<DelaunayTriangle> triangles, List<Edge> buffer, DelaunayTriangle superTriangle) {
+        //构建初始的三角网
+        //从左到右遍历所有的点
+        for (Point point : points) {
+            // 初始化buffer
+            buffer.clear();
+            System.out.print(point.getId() + "\t\t");
+            List<DelaunayTriangle> newTriangles = new ArrayList<>();
+            temp.clear();
+            temp.addAll(triangles);
+
+            //倒序遍历所有temp中的三角形
+            for (int i = temp.size() - 1; i >= 0; i--) {
+                DelaunayTriangle triangle = temp.get(i);
+                //获取点和三角形外接圆的位置关系
+                int WHEREISPOINT = WhereIsPoint(triangle, point);
+                //在圆内
+                if (WHEREISPOINT == -1) {
+                    //把三角形的三边存入buffer中
+                    buffer.addAll(triangle.getEdges());
+                    //在temp中删除该三角形
+                    triangles.remove(triangle);
+                }
+            }
+            //顺序遍历所有buffer中的边,进行去重（重叠的两条边都删）
+            System.out.print(buffer.size()+"  ");
+            bufferQuChong(buffer);
+            System.out.print(buffer.size()+"  ");
+
+            //顺序遍历所有buffer中的边，将现有点与所有边一一组合为新的三角形存入temp中
+            for (Edge edge : buffer) {
+                newTriangles.add(createTriangleWithEdgePoint(edge, point));
+            }
+            triangles.addAll(newTriangles);
+            System.out.println(temp.size());
+        }
+
+        //所有点遍历完之后，合并所有确定未确定的三角形列表
+        triangles.addAll(temp);
+        //去除所有与超级三角形三点有关的三角形
+        deleteTriangleWithSuperTriangle(triangles, superTriangle);
+    }
 
     /*---------------------------我是快乐的分割线----------------------*/
 
@@ -125,6 +172,9 @@ public class createDelaunayTriangleMap {
     }
 
     //通过一条边和一个点建立一个三角形(三点做三角形在pojo.DelaunayTreiangle里面)
+    //要改多线程
+
+
     public static DelaunayTriangle createTriangleWithEdgePoint(Edge edge, Point point) {
         DelaunayTriangle delaunayTriangle = new DelaunayTriangle(edge.getA(), edge.getB(), point);
         return delaunayTriangle;
@@ -133,7 +183,6 @@ public class createDelaunayTriangleMap {
     //buffer去重（重复的两条边都删除）
     public static void bufferQuChong(List<Edge> buffer) {
         List<Edge> chongFu = new ArrayList<>();
-        Set<Edge> newBuffer = new HashSet<>();
         for (int i = buffer.size() - 1; i >= 0; i--) {
             for (int j = i - 1; j >= 0; j--) {
                 Edge edge = buffer.get(i);
@@ -143,16 +192,15 @@ public class createDelaunayTriangleMap {
                 }
             }
         }
-        for (Edge edge1 : chongFu) {
-            for (Edge edge : buffer) {
-                if (edge != edge1) {
-                    newBuffer.add(edge);
+        for(Edge edge : chongFu){
+            while (true){
+                if(buffer.contains(edge)){
+                    buffer.remove(edge);
+                }
+                else {
+                    break;
                 }
             }
-        }
-        if (newBuffer.size() != 0) {
-            buffer.clear();
-            buffer.addAll(newBuffer);
         }
     }
 
