@@ -46,7 +46,6 @@ public class getPoints{
         }
         for(Point point:points){
             point.setId(points.indexOf(point)+1);
-            System.out.println(point);
         }
 
         return points;

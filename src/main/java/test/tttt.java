@@ -21,10 +21,16 @@ import java.util.Set;
 
 public class tttt {
     public static void main(String[] args) throws IOException {
+
+        long start = System.currentTimeMillis();
+
         //从数据库里得到基站散列表
         List<Point> points = getPoints.getP();
 
         List<DelaunayTriangle> triangles = createDelaunayTriangleMap.createDelanuaryTriangleMap(points);
+
+        long end = System.currentTimeMillis();
+        System.out.println("Time: " + (end - start) + "ms");
 
     }
 }
