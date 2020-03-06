@@ -34,4 +34,9 @@ public class Edge
 		}
 		return false;
 	}
+	@Override
+	public String toString(){
+		return 	"("+this.getA().getId()+","+this.getB().getId()+")";
+
+	}
 }

@@ -26,27 +26,12 @@ public class getPoints{
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
         SqlSession session = sqlSessionFactory.openSession();
 
-        List<Site> sites = session.selectList("getSiteFromDB");
+        List<Point> points = session.selectList("getSiteFromDB");
         session.commit();
         session.close();
-        List<Point> points = new ArrayList<>();
-
-
-        for (Site s : sites) {
-            Point p = new Point(0,s);
-            points.add(p);
-        }
 
         //对散列表进行排序，经度为主序，纬度为从序,重写id
         Point.Sort(points);
-        for(int i=points.size()-1;i>=1;i--){
-            if(points.get(i).equals(points.get(i-1))){
-                points.remove(i);
-            }
-        }
-        for(Point point:points){
-            point.setId(points.indexOf(point)+1);
-        }
 
         return points;
     }

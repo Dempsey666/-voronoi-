@@ -4,8 +4,8 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="java/pojo">
-    <select id="getSiteFromDB" resultType="Site">
-        select longitude,latitude from jizhan
+    <select id="getSiteFromDB" resultType="Point">
+        select lac,longitude,latitude from jizhandata
     </select>
     <select id="getManFromDB" resultType="man">
         select * from dem

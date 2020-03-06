@@ -2,6 +2,7 @@ package dao;
 
 import pojo.*;
 
+import javax.xml.transform.Source;
 import java.util.*;
 
 /**
@@ -20,7 +21,6 @@ public class createDelaunayTriangleMap {
 
         //构建超级三角形
         DelaunayTriangle superTriangle = createDelaunayTriangleMap.createSuperTriangle(points);
-
         //构建Delaunary三角网
         List<DelaunayTriangle> temp = new ArrayList<>();//未确定的三角形列表
         List<DelaunayTriangle> triangles = new ArrayList<>();//确定的三角形列表
@@ -78,6 +78,7 @@ public class createDelaunayTriangleMap {
         List<Edge> broaderEdges = selectBroaderEdgeList(triangles);
         //再从链表中提取出所有边缘点集
         List<Point> broaderPoints = selectPointsWithEdgeList(broaderEdges);
+        System.out.println();
         //获取所有边的集合
         List<Edge> allEdges = getAllEdge(triangles);
         //正片开始
@@ -92,12 +93,9 @@ public class createDelaunayTriangleMap {
                 Edge edgeII2 = new Edge(pointI, pointI2);
                 //得到与点i+1有关的所有线段，以该点为A
                 List<Edge> edgeListWithPoint = getEdgeListWithPoint(allEdges, pointI1);
-                System.out.print(edgeListWithPoint.size()+"  ");
                 //移除与i，i+2有关的线段
                 removeEdgesWithPoint(edgeListWithPoint,pointI);
                 removeEdgesWithPoint(edgeListWithPoint,pointI2);
-                System.out.println(edgeListWithPoint.size()+"  ");
-
                 //遍历除i，i+2有关的所有线段，判断其射线是否与线段（i，i+2）相交
                 for(Edge edge : edgeListWithPoint){
                     int isCroiss = isCross(edgeListWithPoint,edgeII2);
@@ -112,7 +110,6 @@ public class createDelaunayTriangleMap {
                         broaderPoints.remove(pointI1);
                         //在三角形列表中，新增三角形（i,i+1,i+2）
                         triangles.add(new DelaunayTriangle(pointI,pointI1,pointI2));
-                        //ystem.out.println(triangles.get(triangles.size()-1));
                         break;
                     }
                     else{
@@ -125,7 +122,6 @@ public class createDelaunayTriangleMap {
             }
             break;
         }
-        System.out.println(triangles.size());
         return triangles;
     }
 
@@ -150,11 +146,11 @@ public class createDelaunayTriangleMap {
         xA = ShootEdge.getA().getLongitude();
         xB = ShootEdge.getB().getLongitude();
         xC = edge.getA().getLongitude();
-        xD = edge.getA().getLongitude();
+        xD = edge.getB().getLongitude();
         yA = ShootEdge.getA().getLatitude();
         yB = ShootEdge.getB().getLatitude();
         yC = edge.getA().getLatitude();
-        yD = edge.getA().getLatitude();
+        yD = edge.getB().getLatitude();
         if (xC > xD) {
             double temp;
             temp = xC;
@@ -195,7 +191,7 @@ public class createDelaunayTriangleMap {
                 }
             }
             if (xC < xA && xD > xA) {
-                if (((y7 - yA) * (yC - y6)) < 0) {
+                if (((y7 - yA) * (yC - y5)) < 0) {
                     return true;
                 }
             }
