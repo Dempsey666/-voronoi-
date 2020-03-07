@@ -3,6 +3,7 @@ package pojo;
 import lombok.Data;
 
 @Data
+
 //三角形的边
 public class Edge
 {
@@ -11,6 +12,11 @@ public class Edge
 	{
 		this.a = a;
 		this.b = b;
+	}
+	public Edge(Site a, Site b)
+	{
+		this.a = new Point(0,a);
+		this.b = new Point(0,b);
 	}
 
 	//重写equals，使两边的两点相等时，判断两边为一边
@@ -24,9 +30,9 @@ public class Edge
 		}
 		if(obj instanceof Edge) {
 			Edge edge = (Edge) obj;
-			if(edge.getA()==this.getA()&&edge.getB()==this.getB()){
+			if(edge.getA().equals(this.getA())&&edge.getB().equals(this.getB())){
 				return true;
-			}else if (edge.getA()==this.getB()&&edge.getB()==this.getA()){
+			}else if (edge.getA().equals(this.getB())&&edge.getB().equals(this.getA())){
 				return true;
 			}else {
 				return false;
@@ -36,7 +42,7 @@ public class Edge
 	}
 	@Override
 	public String toString(){
-		return 	"("+this.getA().getId()+","+this.getB().getId()+")";
-
+		//return 	"("+this.getA().getId()+","+this.getB().getId()+")";
+		return 	"("+this.getA().getLatitude()+","+this.getB().getLatitude()+")";
 	}
 }

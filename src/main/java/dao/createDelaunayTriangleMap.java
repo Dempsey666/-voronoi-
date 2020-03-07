@@ -14,16 +14,14 @@ import java.util.*;
  */
 public class createDelaunayTriangleMap {
 
-
     //创建三角网
-    public static List<DelaunayTriangle> createDelanuaryTriangleMap(List<Point> points) {
+    public static void createDelanuaryTriangleMap(List<DelaunayTriangle> triangles,List<Edge> broaderEdges,List<Point> broaderPoints,List<Point> points) {
         //构建初始的三角网
 
         //构建超级三角形
         DelaunayTriangle superTriangle = createDelaunayTriangleMap.createSuperTriangle(points);
         //构建Delaunary三角网
         List<DelaunayTriangle> temp = new ArrayList<>();//未确定的三角形列表
-        List<DelaunayTriangle> triangles = new ArrayList<>();//确定的三角形列表
         List<Edge> buffer = new ArrayList<>();//未使用完的边
 
         //将超级三角形放入temp中
@@ -31,7 +29,7 @@ public class createDelaunayTriangleMap {
 
         //从左到右遍历所有的点
         for (Point point : points) {
-            // 初始化buffer
+            //初始化buffer
             buffer.clear();
             //倒序遍历所有temp中的三角形
             for (int i = temp.size() - 1; i >= 0; i--) {
@@ -75,9 +73,9 @@ public class createDelaunayTriangleMap {
 //要开始凸边修饰了
 
         //先获取有序的边缘边双向链表
-        List<Edge> broaderEdges = selectBroaderEdgeList(triangles);
+        broaderEdges.addAll(selectBroaderEdgeList(triangles));
         //再从链表中提取出所有边缘点集
-        List<Point> broaderPoints = selectPointsWithEdgeList(broaderEdges);
+        broaderPoints.addAll(selectPointsWithEdgeList(broaderEdges));
         System.out.println();
         //获取所有边的集合
         List<Edge> allEdges = getAllEdge(triangles);
@@ -122,7 +120,6 @@ public class createDelaunayTriangleMap {
             }
             break;
         }
-        return triangles;
     }
 
     /*---------------------------我是快乐的分割线----------------------*/

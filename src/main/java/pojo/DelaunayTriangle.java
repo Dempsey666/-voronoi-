@@ -21,8 +21,7 @@ public class DelaunayTriangle {
     private Point p1, p2, p3; //三角形三点
     private Site centerPoint; //外界圆圆心
     private double radius; //外接圆半径
-    private ArrayList<Edge> edges = new ArrayList<>();//三边
-    private ArrayList<DelaunayTriangle> adjoinTriangle = new ArrayList<>(); //邻接三角形
+    private ArrayList<Edge> edges = new ArrayList<>();//三边yi
 
     //传入三个点的构造方法，构造的同时计算出圆心和半径
     public DelaunayTriangle(Point p1, Point p2, Point p3) {
