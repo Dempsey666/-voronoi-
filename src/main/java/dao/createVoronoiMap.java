@@ -17,7 +17,12 @@ public class createVoronoiMap {
     //绘制维诺图
     public static List<Cover> createVoronoiMap(List<DelaunayTriangle> triangles, List<Edge> broaderEdges, List<Point> broaderPoints, List<Point> points) {
         List<Cover> cover = new ArrayList<>();//基站和它的覆盖区 集合
+        //图形边界
 
+        Site centerPoint = getCenterForPoints(broaderPoints);
+        double radius = 1.0;
+
+        //遍历求覆盖区
         for (Point point : points) {
             //先完成非边缘点的覆盖区绘制
             if (!broaderPoints.contains(point)) {
@@ -32,8 +37,18 @@ public class createVoronoiMap {
             }
             //再完成边缘点的预测覆盖区绘制
             else {
-
-
+                //获取点有关的三角形集合
+                List<DelaunayTriangle> triangleList = getTrianglesListWithPoint(triangles, point);
+                //获取有关三角形的外接圆圆心集合
+                List<Site> siteList = getCenterPointsWithTriangles(triangleList);
+                //获取边缘点有关的边缘边集合
+                List<Edge> bEforPoint = createDelaunayTriangleMap.getEdgeListWithPoint(broaderEdges,point);
+                //合并边缘点集
+                siteList.addAll(getCrossSites(bEforPoint,centerPoint,radius));
+                //获取点集所有点连成的边集，也就是覆盖区
+                List<Edge> coverToPoint = getEdgesWithSites(siteList);
+                //最后将结果组合存入cover中
+                cover.add(new Cover(point, coverToPoint));
             }
         }
 
@@ -43,9 +58,63 @@ public class createVoronoiMap {
 
     /*---------------------------我是快乐的分割线----------------------*/
 
+    //求边缘边与图形边界的交点集
+    public static List<Site> getCrossSites(List<Edge> bEforPoint,Site centerPoint,double radius){
+        List<Site> CrossSites = new ArrayList<>();
+        for(Edge edge:bEforPoint){
+            Site sA = edge.getA().getS();
+            Site sB = edge.getB().getS();
+            double x1,x2,x3,y1,y2,y3,k1,k2,b1,b2,xc,yc;
+            x1=sA.getLongitude();
+            x2=sB.getLongitude();
+            y1=sA.getLatitude();
+            y2=sA.getLatitude();
+            xc=centerPoint.getLongitude();
+            yc=centerPoint.getLatitude();
+            //点3是中点，线2是中垂线
+            x3=(x1+x2)/2;
+            y3=(y1+y2)/2;
+            k1=(y1-y2)/(x1-x2);
+            b1=y1-k1*x1;
+            k2=-1/k1;
+            b2=y3-k2*x3;
+            double a = k2*k2+1;
+            double b = 2*k2*b2-2*xc-2*k2*yc;
+            double c = radius*radius-xc*xc-b2*b2-yc*yc+2*b2*yc;
+            double Cross_x1 = (-b+Math.sqrt(b*b-4*a*c))/2*a;
+            double Cross_x2 = (-b-Math.sqrt(b*b-4*a*c))/2*a;
+            if(Math.abs(Cross_x1 - x3)< Math.abs(Cross_x2 - x3)){
+                CrossSites.add(new Site(Cross_x1,k2*Cross_x1+b2));
+            }
+            else{
+                CrossSites.add(new Site(Cross_x2,k2*Cross_x2+b2));
+            }
+        }
+
+        return CrossSites;
+    }
+
     //求边缘点的中心，函数运行过程中会输出最远点和最近点与中心的距离，用于手动设置边缘半径
-    public static Point getCenterForPoints(){
-        Point centerPointForPoints = new Point(0,0,0);
+    public static Site getCenterForPoints(List<Point> broaderPoints) {
+        double x = 0;
+        double y = 0;
+        for(Point point:broaderPoints){
+            x+=point.getLongitude();
+            y+=point.getLatitude();
+        }
+        x/=broaderPoints.size();
+        y/=broaderPoints.size();
+
+//        double distance_Max=0;
+//        double distance_Min=10;
+//        double distance;
+//        for(Point point:broaderPoints){
+//            distance=Math.sqrt(Math.pow(x-point.getLongitude(),2)+Math.pow(y-point.getLatitude(),2));
+//            distance_Max=Math.max(distance,distance_Max);
+//            distance_Min=Math.min(distance,distance_Min);
+//        }
+
+        Site centerPointForPoints = new Site(x, y);
 
         return centerPointForPoints;
     }
