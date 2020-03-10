@@ -8,6 +8,7 @@ package pojo;
  * Modified By:
  */
 
+import com.alibaba.fastjson.annotation.JSONField;
 import dao.sortBylola;
 import lombok.Data;
 import lombok.ToString;
@@ -20,6 +21,7 @@ import java.util.List;
 @Data
 public class Point {
     private int id;
+    @JSONField(serialize = false)
     private Site s;
 
     public Point(int id, Site s) {

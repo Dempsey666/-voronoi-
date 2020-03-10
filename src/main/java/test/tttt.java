@@ -7,8 +7,11 @@ package test;
  * Modified By:
  */
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.serializer.SerializerFeature;
 import dao.createVoronoiMap;
 import dao.getPoints;
+import dao.wrJsonFile;
 import pojo.Cover;
 import pojo.DelaunayTriangle;
 import pojo.Edge;
@@ -29,16 +32,19 @@ public class tttt {
 
         //构建Delaunary三角网
         List<DelaunayTriangle> triangles = new ArrayList<>();//确定的三角形列表
-        List<Edge> broaderEdges= new ArrayList<>();//边缘边集
-        List<Point> broaderPoints = new ArrayList<>();//边缘点集
+        List<Edge> broderEdges= new ArrayList<>();//边缘边集
+        List<Point> broderPoints = new ArrayList<>();//边缘点集
 
-        createDelaunayTriangleMap.createDelanuaryTriangleMap(triangles,broaderEdges,broaderPoints,points);
+        createDelaunayTriangleMap.createDelanuaryTriangleMap(triangles,broderEdges,broderPoints,points);
 
         //绘制维诺图
-        List<Cover> covers = createVoronoiMap.createVoronoiMap(triangles,broaderEdges,broaderPoints,points);
+        List<Cover> covers = createVoronoiMap.createVoronoiMap(triangles,broderEdges,broderPoints,points);
+//        for(Cover cover:covers){
+//            System.out.println(cover.getPosition().getId()+" "+cover.getBroderSites().size()+" "+cover.getS_km());
+//        }
 
-
-
+        String jsonOutput= JSON.toJSONString(covers, SerializerFeature.DisableCircularReferenceDetect);
+        wrJsonFile.writeFile("D:\\123.json",jsonOutput);
 
 
         long end = System.currentTimeMillis();

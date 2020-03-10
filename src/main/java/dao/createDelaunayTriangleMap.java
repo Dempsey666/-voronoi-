@@ -15,7 +15,7 @@ import java.util.*;
 public class createDelaunayTriangleMap {
 
     //创建三角网
-    public static void createDelanuaryTriangleMap(List<DelaunayTriangle> triangles,List<Edge> broaderEdges,List<Point> broaderPoints,List<Point> points) {
+    public static void createDelanuaryTriangleMap(List<DelaunayTriangle> triangles,List<Edge> broderEdges,List<Point> broderPoints,List<Point> points) {
         //构建初始的三角网
 
         //构建超级三角形
@@ -73,20 +73,20 @@ public class createDelaunayTriangleMap {
 //要开始凸边修饰了
 
         //先获取有序的边缘边双向链表
-        broaderEdges.addAll(selectBroaderEdgeList(triangles));
+        broderEdges.addAll(selectBroderEdgeList(triangles));
         //再从链表中提取出所有边缘点集
-        broaderPoints.addAll(selectPointsWithEdgeList(broaderEdges));
+        broderPoints.addAll(selectPointsWithEdgeList(broderEdges));
         System.out.println();
         //获取所有边的集合
         List<Edge> allEdges = getAllEdge(triangles);
         //正片开始
         while (true) {
             int anyCross = 0;
-            for (int i = 0; i < broaderPoints.size() - 1; i++) {
+            for (int i = 0; i < broderPoints.size() - 1; i++) {
                 //得到点i,i+1,i+2
-                Point pointI = broaderPoints.get(i);
-                Point pointI1 = broaderPoints.get((i + 1)%broaderPoints.size());
-                Point pointI2 = broaderPoints.get((i + 2)%broaderPoints.size());
+                Point pointI = broderPoints.get(i);
+                Point pointI1 = broderPoints.get((i + 1)%broderPoints.size());
+                Point pointI2 = broderPoints.get((i + 2)%broderPoints.size());
                 //得到i，i+2连接的线段
                 Edge edgeII2 = new Edge(pointI, pointI2);
                 //得到与点i+1有关的所有线段，以该点为A
@@ -99,13 +99,13 @@ public class createDelaunayTriangleMap {
                     int isCroiss = isCross(edgeListWithPoint,edgeII2);
                     if(isCroiss==0){
                         //若不相交，在边缘边链表中，去掉（i,i+1）、（i+1,i+2）,添加（i，i+2）
-                        broaderEdges.remove(new Edge(pointI,pointI1));
-                        broaderEdges.remove(new Edge(pointI1,pointI2));
-                        broaderEdges.add(edgeII2);
+                        broderEdges.remove(new Edge(pointI,pointI1));
+                        broderEdges.remove(new Edge(pointI1,pointI2));
+                        broderEdges.add(edgeII2);
                         //在所有边集合中，添加（i,i+2)
                         allEdges.add(edgeII2);
                         //在边缘点链表中，去掉i+1
-                        broaderPoints.remove(pointI1);
+                        broderPoints.remove(pointI1);
                         //在三角形列表中，新增三角形（i,i+1,i+2）
                         triangles.add(new DelaunayTriangle(pointI,pointI1,pointI2));
                         break;
@@ -238,52 +238,53 @@ public class createDelaunayTriangleMap {
 
     //从链表中提取出所有边缘点集
     public static List<Point> selectPointsWithEdgeList(List<Edge> edges) {
-        List<Point> broaderPoints = new LinkedList<>();
+        List<Point> broderPoints = new LinkedList<>();
         for (Edge edge : edges) {
-            broaderPoints.add(edge.getA());
+            broderPoints.add(edge.getA());
         }
-        return broaderPoints;
+        return broderPoints;
     }
 
     //获取边缘边的有序集合
-    public static List<Edge> selectBroaderEdgeList(List<DelaunayTriangle> triangles) {
-        List<Edge> allBroaderEdges = new ArrayList<>();//所有边缘边的集合
-        LinkedList<Edge> broaderEdges = new LinkedList<>();//有顺序的边缘边集合
+    public static List<Edge> selectBroderEdgeList(List<DelaunayTriangle> triangles) {
+        List<Edge> allBroderEdges = new ArrayList<>();//所有边缘边的集合
+        LinkedList<Edge> broderEdges = new LinkedList<>();//有顺序的边缘边集合
         //遍历所有三角形，获得所有边
         for (DelaunayTriangle triangle : triangles) {
-            allBroaderEdges.addAll(triangle.getEdges());
+            allBroderEdges.addAll(triangle.getEdges());
         }
         //去除所有重复的边，留下边缘边
-        EdgesQuChong(allBroaderEdges);
+        EdgesQuChong(allBroderEdges);
         //将边缘边按序排列
-        for (int i = 0; i < allBroaderEdges.size() - 1; i++) {
+        for (int i = 0; i < allBroderEdges.size() - 1; i++) {
             //插入第一个
-            if (broaderEdges.size() == 0) {
-                broaderEdges.add(allBroaderEdges.get(i));
+            if (broderEdges.size() == 0) {
+                broderEdges.add(allBroderEdges.get(i));
                 continue;
             }
-            int firstAId = broaderEdges.getFirst().getA().getId();
+            int firstAId = broderEdges.getFirst().getA().getId();
             //遍历插入
-            for (Edge edge : allBroaderEdges) {
-                Edge lastEdge = broaderEdges.getLast();
+            for (Edge edge : allBroderEdges) {
+                Edge lastEdge = broderEdges.getLast();
                 if (!edge.equals(lastEdge)) {//在两边不相同的情况下
                     if (lastEdge.getB().getId() == edge.getA().getId()) {//若链表中最后一边的Bid=另一条边的Aid
-                        broaderEdges.addLast(edge);//把该边塞到链表尾
+                        broderEdges.addLast(edge);//把该边塞到链表尾
                     }
                     if (lastEdge.getB().getId() == edge.getB().getId()) {//若链表中最后一边的Bid=另一条边的Bid
                         Point tempPoint = edge.getB();
                         edge.setB(edge.getA());
                         edge.setA(tempPoint);//把该边的两端换个位置再塞到链表尾
+                        //broderEdges.addLast(edge);//把该边塞到链表尾
                     }
                 }
             }
-            int lastBId = broaderEdges.getLast().getB().getId();
+            int lastBId = broderEdges.getLast().getB().getId();
             //当链表头id=链表尾id，也就是所有点都遍历完了，跳出循环
             if (firstAId == lastBId) {
                 break;
             }
         }
-        return broaderEdges;
+        return broderEdges;
     }
 
     /*---------------------------我是快乐的分割线----------------------*/
