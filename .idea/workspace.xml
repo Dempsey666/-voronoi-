@@ -5,24 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="272cf9e7-7cc2-4e1a-926b-fdd1224246e2" name="默认更改列表" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/wrJsonFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/config/getData.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/config/mapping.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/config/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/config/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/createDelaunayTriangleMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/createDelaunayTriangleMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/createVoronoiMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/createVoronoiMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pojo/Cover.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pojo/Cover.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pojo/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pojo/Point.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/tttt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/tttt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/createDelaunayTriangleMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/createDelaunayTriangleMap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/getData.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pojo/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pojo/Point.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/tttt.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/tttt.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,6 +201,7 @@
       <workItem from="1583566231427" duration="14112000" />
       <workItem from="1583583255486" duration="15957000" />
       <workItem from="1583651865474" duration="22728000" />
+      <workItem from="1583812123287" duration="1238000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1583244392828</created>
@@ -345,7 +329,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583601850983</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="test">
+      <created>1583812142513</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1583812142513</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -380,10 +371,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#项目结构/0.0.1920.1040/-1080.-371.1080.1880@0.0.1920.1040" timestamp="1583054373973" />
-    <state x="-925" y="161" key="CommitChangelistDialog2" timestamp="1583601850104">
+    <state x="-925" y="161" key="CommitChangelistDialog2" timestamp="1583812140916">
       <screen x="-1080" y="-371" width="1080" height="1880" />
     </state>
-    <state x="-925" y="161" key="CommitChangelistDialog2/0.0.1920.1040/-1080.-371.1080.1880@-1080.-371.1080.1880" timestamp="1583601850104" />
+    <state x="-925" y="161" key="CommitChangelistDialog2/0.0.1920.1040/-1080.-371.1080.1880@-1080.-371.1080.1880" timestamp="1583812140916" />
     <state x="276" y="224" key="CommitChangelistDialog2/0.0.1920.1040/-1080.-371.1080.1880@0.0.1920.1040" timestamp="1583423472737" />
     <state x="-791" y="425" key="FileChooserDialogImpl" timestamp="1583503188811">
       <screen x="-1080" y="-371" width="1080" height="1880" />
@@ -429,14 +420,14 @@
       <screen x="-1080" y="-371" width="1080" height="1880" />
     </state>
     <state x="-1010" y="224" key="Maven.ArtifactSearchDialog/0.0.1920.1040/-1080.-371.1080.1880@-1080.-371.1080.1880" timestamp="1583140183958" />
-    <state x="-1039" y="211" key="SettingsEditor" timestamp="1583594181133">
+    <state x="-1039" y="211" key="SettingsEditor" timestamp="1583813361651">
       <screen x="-1080" y="-371" width="1080" height="1880" />
     </state>
-    <state x="-1039" y="211" key="SettingsEditor/0.0.1920.1040/-1080.-371.1080.1880@-1080.-371.1080.1880" timestamp="1583594181133" />
-    <state x="-948" y="290" key="Vcs.Push.Dialog.v2" timestamp="1583601852540">
+    <state x="-1039" y="211" key="SettingsEditor/0.0.1920.1040/-1080.-371.1080.1880@-1080.-371.1080.1880" timestamp="1583813361651" />
+    <state x="-948" y="290" key="Vcs.Push.Dialog.v2" timestamp="1583812144033">
       <screen x="-1080" y="-371" width="1080" height="1880" />
     </state>
-    <state x="-948" y="290" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-371.1080.1880@-1080.-371.1080.1880" timestamp="1583601852540" />
+    <state x="-948" y="290" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1080.-371.1080.1880@-1080.-371.1080.1880" timestamp="1583812144033" />
     <state x="-748" y="486" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583246196937">
       <screen x="-1080" y="-371" width="1080" height="1880" />
     </state>
