@@ -7,8 +7,8 @@
     <select id="getSiteFromDB" resultType="Point">
         select lac,longitude,latitude from jizhandata
     </select>
-    <select id="getManFromDB" resultType="man">
-        select * from dem
+    <select id="getManFromDB" resultType="Man">
+        select * from dempsey
     </select>
 
 

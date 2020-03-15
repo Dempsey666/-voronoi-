@@ -31,7 +31,7 @@ public class getPoints{
         session.close();
 
         //对散列表进行排序，经度为主序，纬度为从序,重写id
-        Point.Sort(points);
+        Collections.sort(points);
 
         return points;
     }

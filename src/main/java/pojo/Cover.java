@@ -1,8 +1,8 @@
 package pojo;
 
 import com.alibaba.fastjson.annotation.JSONField;
-import dao.createDelaunayTriangleMap;
 import lombok.Data;
+import sun.font.FontRunIterator;
 
 
 import java.util.ArrayList;
@@ -36,14 +36,27 @@ public class Cover {
     double S_km = 0;//覆盖区面积的km^2形式，用于直观的展示和阈值计算
 
     @JSONField(serialize = false)
-    List<man> mans = new ArrayList<>();//覆盖区有哪些人
+    List<Man> Men = new ArrayList<>();//覆盖区有哪些人
 
+    @JSONField(serialize = false)
+    List<List<Man>> whenMan = new ArrayList<>();//覆盖区分时段统计人
+
+    @JSONField(name = "各时段人口阈值",ordinal = 4)
+    int[] peopleMaxForHour = new int[24];
+
+    @JSONField(serialize = false)
+    double[] peopleChangeForHour = new double[24];//人口变化百分比率
+
+    //构造器
     public Cover(Point point, List<Site> broderSites, List<Edge> coverEdges) {
         this.position = point;
         this.broderSites = broderSites;
         this.coverEdges = coverEdges;
         countS();
         sortSite();
+        for(int i=0;i<24;i++){
+            this.whenMan.add(new ArrayList<Man>());
+        }
     }
 
     //对覆盖区，计算面积
@@ -101,5 +114,36 @@ public class Cover {
             broderSites.add(edge.getA().getS());
         }
 
+    }
+
+    public static void calPeopleMaxForHour(List<Cover> covers){
+        for (Cover cover:covers){
+            for (int i = 0; i < 24; i++) {
+                int oP = cover.getWhenMan().get(i).size();
+                if (oP!=1){
+                    cover.getPeopleMaxForHour()[i] = (int) (1.1+1/Math.log(oP))*oP+5;
+                }
+                else{
+                    cover.getPeopleMaxForHour()[i] = 2;
+                }
+            }
+        }
+    }
+    public static void calPeopleChangeForHour(List<Cover> covers){
+        for (Cover cover:covers){
+            for (int i = 0; i < 24; i++) {
+                int oP_now = cover.getWhenMan().get(i).size();
+                if(oP_now!=0){
+                    if(i==23){
+                        int oP_nextHour = cover.getWhenMan().get(0).size();
+                        cover.getPeopleChangeForHour()[i]=oP_nextHour/oP_now;
+                    }
+                    else {
+                         int oP_nextHour = cover.getWhenMan().get(i+1).size();
+                         cover.getPeopleChangeForHour()[i]=oP_nextHour/oP_now;
+                    }
+                }
+            }
+        }
     }
 }

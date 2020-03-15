@@ -9,7 +9,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import pojo.man;
+import pojo.Man;
 
 /**
  * Package: dao
@@ -19,15 +19,20 @@ import pojo.man;
  * Modified By:
  */
 public class getMan{
-    public static void getM() throws IOException{
+    public static List<Man> getM() throws IOException{
         String resource = "mybatis-config.xml";
         InputStream inputStream = Resources.getResourceAsStream(resource);
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
         SqlSession session = sqlSessionFactory.openSession();
 
-        List<man> mans = session.selectList("getManFromDB");
+        List<Man> mans = session.selectList("getManFromDB");
+        for(Man man:mans){
+            man.setHour();
+        }
+
         session.commit();
         session.close();
 
+        return mans;
     }
 }
